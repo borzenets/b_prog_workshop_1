@@ -31,21 +31,12 @@ int GetNumber(string message)
 int SumDigitsOfNumber(int number)
 {
     string numberStr = Convert.ToString(number);
-    Console.WriteLine($"1- {numberStr}, {}");
     int sum = 0;
     for (int i = 0; i < numberStr.Length; i++)
     {
-        sum = sum + Convert.ToInt32(numberStr[i]);
-        Console.WriteLine($"2- {sum}");
+        sum = sum + (int)Char.GetNumericValue(numberStr[i]);
     }
     return sum;
 }
-int num = GetNumber("Введите число сумму цифр которого хотите получить: ");
-Console.WriteLine(num);
 
-int sumDigit = SumDigitsOfNumber(num);
-Console.WriteLine(sumDigit);
-
-
-
-//Console.WriteLine($"Сумма цифр введенного числа: {SumDigitsOfNumber(GetNumber("Введите число сумму цифр которого хотите получить: "))}");
+Console.WriteLine($"Сумма цифр введенного числа: {SumDigitsOfNumber(GetNumber("Введите число сумму цифр которого хотите получить: "))}");
