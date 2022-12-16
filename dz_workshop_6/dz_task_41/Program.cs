@@ -66,8 +66,25 @@ void PrintArrey(int[] arrey)
     Console.WriteLine("]");
 }
 
+string PluralNumberInRus(int number)
+{
+    if (number == 1 || number % 10 == 1 && number != 11) return "число";
+    else if ((number != 12
+            && number != 13
+            && number != 14)
+            && (number == 2
+            || number == 3
+            || number == 4
+            || number % 10 == 2
+            || number % 10 == 3
+            || number % 10 == 4))
+            return "числа";
+    else return "чисел";
+}
+
 int[] newArray = GetArrayFromConsole();
 PrintArrey(newArray);
 Console.WriteLine();
-Console.WriteLine($"Вы ввели: {CountNumberPositiveItems(newArray)} чисел больше 0.");
+Console.WriteLine($"Вы ввели: {CountNumberPositiveItems(newArray)} " +  
+                    $"{PluralNumberInRus(CountNumberPositiveItems(newArray))} больше 0.");
 Console.WriteLine();
