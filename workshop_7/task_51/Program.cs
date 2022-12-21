@@ -13,7 +13,7 @@ int GetNumber(string message)
     while (true)
     {
         Console.WriteLine(message);
-        if(int.TryParse(Console.ReadLine(), out result))
+        if (int.TryParse(Console.ReadLine(), out result))
             break;
         else
             Console.WriteLine("Вы ввели не чило.");
@@ -42,7 +42,7 @@ void PrintArray(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i,j]} ");
+            Console.Write($"{matrix[i, j]} ");
         }
         Console.WriteLine();
     }
@@ -57,7 +57,7 @@ int SumElementsWhoseIndexesEqual(int[,] matrix)
         {
             if (i == j)
             {
-                sum = sum + matrix[i,j];
+                sum = sum + matrix[i, j];
             }
         }
     }
@@ -69,5 +69,5 @@ int n = GetNumber("Веедите n: ");
 
 int[,] matrix = InitMatrix(m, n);
 PrintArray(matrix);
-Console.WriteLine($"Сумма элементов главной диагонали равна: " + 
+Console.WriteLine($"Сумма элементов главной диагонали равна: " +
                   $"{SumElementsWhoseIndexesEqual(matrix)}");

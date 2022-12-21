@@ -13,7 +13,7 @@ int GetNumber(string message)
     while (true)
     {
         Console.WriteLine(message);
-        if(int.TryParse(Console.ReadLine(), out result))
+        if (int.TryParse(Console.ReadLine(), out result))
             break;
         else
             Console.WriteLine("Вы ввели не чило.");
@@ -42,7 +42,7 @@ void PrintArray(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i,j]} ");
+            Console.Write($"{matrix[i, j]} ");
         }
         Console.WriteLine();
     }
@@ -51,5 +51,5 @@ void PrintArray(int[,] matrix)
 int m = GetNumber("Введите кол-во строк");
 int n = GetNumber("Введите кол-во столбцов");
 
-int[,] matrix = InitMatrix(m,n);
+int[,] matrix = InitMatrix(m, n);
 PrintArray(matrix);

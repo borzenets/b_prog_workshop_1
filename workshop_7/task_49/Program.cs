@@ -20,7 +20,7 @@ int GetNumber(string message)
     while (true)
     {
         Console.WriteLine(message);
-        if(int.TryParse(Console.ReadLine(), out result))
+        if (int.TryParse(Console.ReadLine(), out result))
             break;
         else
             Console.WriteLine("Вы ввели не чило.");
@@ -34,7 +34,7 @@ void PrintArray(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i,j]} ");
+            Console.Write($"{matrix[i, j]} ");
         }
         Console.WriteLine();
     }
@@ -53,7 +53,7 @@ int[,] InitMatrix(int m, int n)
     return matrix;
 }
 
-int[,] SquareElementsWithEvenIndexes (int[,] matrix)
+int[,] SquareElementsWithEvenIndexes(int[,] matrix)
 {
     int[,] newMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
 
@@ -63,14 +63,13 @@ int[,] SquareElementsWithEvenIndexes (int[,] matrix)
         {
             if (i % 2 != 0 && j % 2 != 0)
             {
-                newMatrix[i, j] = matrix[i,j] * matrix[i,j];
+                newMatrix[i, j] = matrix[i, j] * matrix[i, j];
             }
             else
             {
                 newMatrix[i, j] = matrix[i, j];
             }
         }
- 
     }
     return newMatrix;
 }
